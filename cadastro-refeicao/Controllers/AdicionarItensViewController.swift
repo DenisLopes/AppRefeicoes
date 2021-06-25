@@ -41,13 +41,10 @@ class AdicionarItensViewController: UIViewController {
 
     @IBAction func adicionarItem(_ sender: Any) {
         
-        guard let nome = nomeTextfield.text, let calorias = caloriasTextfield.text else{
+        guard let nome = nomeTextfield.text, let calorias = caloriasTextfield.text, let numeroCalorias = Double(calorias) else{
             return
         }
         
-        guard let numeroCalorias = Double(calorias) else{
-            return
-        }
         
         let item = Item(nome: nome, calorias: numeroCalorias)
         delegate?.adicionaItens(item)
