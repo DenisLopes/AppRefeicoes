@@ -10,6 +10,8 @@
 		10929C2D2683E8AF009EECDD /* RefeicaoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10929C2C2683E8AF009EECDD /* RefeicaoTableViewController.swift */; };
 		109318AA25C0E9E7002AA0E2 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109318A925C0E9E7002AA0E2 /* Refeicao.swift */; };
 		109318AD25C0EA46002AA0E2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109318AC25C0EA46002AA0E2 /* Item.swift */; };
+		1098EC5F26854D4500F16789 /* AdicionarItensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098EC5D26854D4500F16789 /* AdicionarItensViewController.swift */; };
+		1098EC6026854D4500F16789 /* AdicionarItensViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1098EC5E26854D4500F16789 /* AdicionarItensViewController.xib */; };
 		10A26C8325BF66B900D3F5BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A26C8225BF66B900D3F5BD /* AppDelegate.swift */; };
 		10A26C8525BF66B900D3F5BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A26C8425BF66B900D3F5BD /* SceneDelegate.swift */; };
 		10A26C8725BF66B900D3F5BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A26C8625BF66B900D3F5BD /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 		109318A625C0A679002AA0E2 /* cadastro-refeicao.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "cadastro-refeicao.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		109318A925C0E9E7002AA0E2 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
 		109318AC25C0EA46002AA0E2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1098EC5D26854D4500F16789 /* AdicionarItensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarItensViewController.swift; sourceTree = "<group>"; };
+		1098EC5E26854D4500F16789 /* AdicionarItensViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdicionarItensViewController.xib; sourceTree = "<group>"; };
 		10A26C7F25BF66B900D3F5BD /* cadastro-refeicao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cadastro-refeicao.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A26C8225BF66B900D3F5BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10A26C8425BF66B900D3F5BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 		109318B125C0ED01002AA0E2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1098EC5D26854D4500F16789 /* AdicionarItensViewController.swift */,
 				10A26C8625BF66B900D3F5BD /* ViewController.swift */,
 				10929C2C2683E8AF009EECDD /* RefeicaoTableViewController.swift */,
 			);
@@ -65,6 +70,7 @@
 		109318B225C0ED65002AA0E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1098EC5E26854D4500F16789 /* AdicionarItensViewController.xib */,
 				10A26C8825BF66B900D3F5BD /* Main.storyboard */,
 			);
 			path = Views;
@@ -161,6 +167,7 @@
 			files = (
 				10A26C8F25BF66BA00D3F5BD /* LaunchScreen.storyboard in Resources */,
 				10A26C8C25BF66BA00D3F5BD /* Assets.xcassets in Resources */,
+				1098EC6026854D4500F16789 /* AdicionarItensViewController.xib in Resources */,
 				10A26C8A25BF66B900D3F5BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +181,7 @@
 			files = (
 				109318AD25C0EA46002AA0E2 /* Item.swift in Sources */,
 				10A26C8725BF66B900D3F5BD /* ViewController.swift in Sources */,
+				1098EC5F26854D4500F16789 /* AdicionarItensViewController.swift in Sources */,
 				10A26C8325BF66B900D3F5BD /* AppDelegate.swift in Sources */,
 				10A26C8525BF66B900D3F5BD /* SceneDelegate.swift in Sources */,
 				109318AA25C0E9E7002AA0E2 /* Refeicao.swift in Sources */,
