@@ -104,6 +104,10 @@
                                 <rect key="frame" x="0.0" y="351" width="414" height="402"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="IO1-nj-mKc"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Frz-AC-TZ5"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqz-DI-Gpm">
                                 <rect key="frame" x="105" y="759" width="204" height="103"/>
@@ -120,6 +124,7 @@
                     <navigationItem key="navigationItem" id="Qt0-rP-Hgh"/>
                     <connections>
                         <outlet property="felicidadeTextfield" destination="XWB-24-0dZ" id="0zh-0O-N5u"/>
+                        <outlet property="intensTableView" destination="MSg-zu-VQB" id="ANv-Oz-L6h"/>
                         <outlet property="nomeTextField" destination="bmr-7H-at8" id="CuF-Mf-VGi"/>
                     </connections>
                 </viewController>
