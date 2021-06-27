@@ -51,11 +51,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let tableView = itensTableView{
             tableView.reloadData()
         }else{
-            let alerta = UIAlertController(title: "Desculpa", message: "Não foi possivel atualizar a tabela", preferredStyle: .alert)
-            let botaoOk = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-            alerta.addAction(botaoOk)
-            
-            present(alerta, animated: true, completion: nil)
+            Alerta(controller: self).exibe(mensagem: "Desculpe nao foi possivel atualizar a sua tabela")
         }
     }
     
@@ -94,30 +90,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    
-    // MARK: - IBActions
-    
-    @IBAction func adicionar(_ sender: Any) {
-        
+    func dadosDoFurmulario() -> Refeicao? {
         guard let nomeDaRefeicao = nomeTextField?.text else {
-            return
+            return nil
         }
         
         guard let felicidadeDaRefeicao = felicidadeTextfield?.text, let felicidade = Int(felicidadeDaRefeicao) else {
-            return
+            return nil
         }
         
         let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: itensSelecionados)
         
+        return refeicao
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func adicionar(_ sender: Any) {
+        if let refeicao = dadosDoFurmulario() {
+            delegate?.adicionaRefeicao(refeicao)
+            navigationController?.popViewController(animated: true)
+        }else{
+            Alerta(controller: self).exibe(mensagem: "Erro ao preencher os campos")
+        }
         
-        print("comi \(refeicao.nome) fiquei com felicidade \(refeicao.felicidade)")
-        
-        delegate?.adicionaRefeicao(refeicao)
-        
-        navigationController?.popViewController(animated: true)
         
     }
     
-
+    
 }
 

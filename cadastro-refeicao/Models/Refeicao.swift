@@ -13,7 +13,7 @@ class Refeicao: NSObject {
     let felicidade: Int
     var itens: Array<Item> = []
     
-
+    
     init(nome: String, felicidade: Int, itens: [Item] = []) {
         self.nome = nome
         self.felicidade = felicidade
@@ -36,5 +36,5 @@ class Refeicao: NSObject {
         
         return mensagem
     }
-
+    
 }

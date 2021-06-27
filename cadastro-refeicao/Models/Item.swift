@@ -16,5 +16,5 @@ class Item: NSObject {
         self.nome = nome
         self.calorias = calorias
     }
-
+    
 }
