@@ -9,10 +9,11 @@ import UIKit
 
 class RefeicaoTableViewController: UITableViewController, AdicionaRefeicaoDelegate{
     
-    var refeicoes = [Refeicao(nome: "Pizza", felicidade: 10),
-                     Refeicao(nome: "Comida japonesa", felicidade: 8),
-                     Refeicao(nome: "Churrasco", felicidade: 9)]
+    var refeicoes: [Refeicao] = []
     
+    override func viewDidLoad() {
+       refeicoes = RefeicaoDao().recupera()
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         refeicoes.count
@@ -32,6 +33,7 @@ class RefeicaoTableViewController: UITableViewController, AdicionaRefeicaoDelega
     func adicionaRefeicao(_ refeicao: Refeicao){
         refeicoes.append(refeicao)
         tableView.reloadData()
+        RefeicaoDao().save(refeicoes)
     }
     
     @objc func mostrarDetalhes(_ gesture: UILongPressGestureRecognizer){
@@ -42,7 +44,8 @@ class RefeicaoTableViewController: UITableViewController, AdicionaRefeicaoDelega
             }
             let refeicao = refeicoes[indexPath.row]
             
-            RemoveRefeicaoViewController(controller: self).exibe(refeicao, handler: {alert in
+            RemoveRefeicaoViewController(controller: self).exibe(refeicao, handler: {
+                alert in
                 self.refeicoes.remove(at: indexPath.row)
                 self.tableView.reloadData()
             })

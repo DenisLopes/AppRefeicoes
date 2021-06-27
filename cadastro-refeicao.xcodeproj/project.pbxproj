@@ -20,6 +20,8 @@
 		10A26C8A25BF66B900D3F5BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A26C8825BF66B900D3F5BD /* Main.storyboard */; };
 		10A26C8C25BF66BA00D3F5BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A26C8B25BF66BA00D3F5BD /* Assets.xcassets */; };
 		10A26C8F25BF66BA00D3F5BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A26C8D25BF66BA00D3F5BD /* LaunchScreen.storyboard */; };
+		10C1A05E2688F40F00E57037 /* RefeicaoDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1A05D2688F40F00E57037 /* RefeicaoDao.swift */; };
+		10C1A0602688F87B00E57037 /* ItemDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1A05F2688F87B00E57037 /* ItemDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		10A26C8B25BF66BA00D3F5BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10A26C8E25BF66BA00D3F5BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10A26C9025BF66BA00D3F5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10C1A05D2688F40F00E57037 /* RefeicaoDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicaoDao.swift; sourceTree = "<group>"; };
+		10C1A05F2688F87B00E57037 /* ItemDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 				109318A925C0E9E7002AA0E2 /* Refeicao.swift */,
 				109318AC25C0EA46002AA0E2 /* Item.swift */,
 				1092733A2687E04B00D545A1 /* Alerta.swift */,
+				10C1A05D2688F40F00E57037 /* RefeicaoDao.swift */,
+				10C1A05F2688F87B00E57037 /* ItemDao.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +195,8 @@
 				109318AD25C0EA46002AA0E2 /* Item.swift in Sources */,
 				10A26C8725BF66B900D3F5BD /* ViewController.swift in Sources */,
 				1092733D2687F38500D545A1 /* RemoveRefeicaoViewController.swift in Sources */,
+				10C1A0602688F87B00E57037 /* ItemDao.swift in Sources */,
+				10C1A05E2688F40F00E57037 /* RefeicaoDao.swift in Sources */,
 				1098EC5F26854D4500F16789 /* AdicionarItensViewController.swift in Sources */,
 				10A26C8325BF66B900D3F5BD /* AppDelegate.swift in Sources */,
 				10A26C8525BF66B900D3F5BD /* SceneDelegate.swift in Sources */,

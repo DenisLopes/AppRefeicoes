@@ -22,10 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - Atributos
     
     var delegate: RefeicaoTableViewController?
-    var itens: [Item] = [Item(nome: "Molho de Tomate", calorias: 4.0),
-                         Item(nome: "Queijo", calorias: 4.0),
-                         Item(nome: "Molho de Pimenta", calorias: 4.0),
-                         Item(nome: "Molho Caipira", calorias: 4.0)]
+    var itens: [Item] = []
     var itensSelecionados: [Item] = []
     
     // MARK: - IBoutlet
@@ -38,6 +35,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         let botaoAdicionaitem = UIBarButtonItem(title: "Adicionar Itens", style: .plain, target: self, action: #selector(adiconarItem))
         navigationItem.rightBarButtonItem = botaoAdicionaitem
+        recuperaItens()
+    }
+    
+    func recuperaItens() {
+        itens = ItemDao().recupera()
     }
     
     @objc func adiconarItem() {
@@ -47,12 +49,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func adicionaItens(_ item: Item) {
         itens.append(item)
-        
+        ItemDao().save(itens)
         if let tableView = itensTableView{
             tableView.reloadData()
         }else{
             Alerta(controller: self).exibe(mensagem: "Desculpe nao foi possivel atualizar a sua tabela")
         }
+        
     }
     
     //MARK: - UiTableDataSource
