@@ -15,17 +15,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //Mark: - IBoutlet
     
-    @IBOutlet weak var intensTableView: UITableView!
+    @IBOutlet weak var itensTableView: UITableView!
     
     
     
     // MARK: - Atributos
     
     var delegate: RefeicaoTableViewController?
-    var itens: [Item] = [Item(nome: "Molho de Tomate", calorias: 4.0),
-                         Item(nome: "Queijo", calorias: 4.0),
-                         Item(nome: "Molho de Pimenta", calorias: 4.0),
-                         Item(nome: "Molho Caipira", calorias: 4.0)]
+    var itens: [Item] = []
     var itensSelecionados: [Item] = []
     
     // MARK: - IBoutlet
@@ -36,8 +33,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: - view life cycle
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         let botaoAdicionaitem = UIBarButtonItem(title: "Adicionar Itens", style: .plain, target: self, action: #selector(adiconarItem))
         navigationItem.rightBarButtonItem = botaoAdicionaitem
+        recuperaItens()
+    }
+    
+    func recuperaItens() {
+        itens = ItemDao().recupera()
     }
     
     @objc func adiconarItem() {
@@ -47,7 +50,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func adicionaItens(_ item: Item) {
         itens.append(item)
-        intensTableView.reloadData()
+        ItemDao().save(itens)
+        if let tableView = itensTableView{
+            tableView.reloadData()
+        }else{
+            Alerta(controller: self).exibe(mensagem: "Desculpe nao foi possivel atualizar a sua tabela")
+        }
+        
     }
     
     //MARK: - UiTableDataSource
@@ -85,30 +94,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    
-    // MARK: - IBActions
-    
-    @IBAction func adicionar(_ sender: Any) {
-        
+    func dadosDoFurmulario() -> Refeicao? {
         guard let nomeDaRefeicao = nomeTextField?.text else {
-            return
+            return nil
         }
         
         guard let felicidadeDaRefeicao = felicidadeTextfield?.text, let felicidade = Int(felicidadeDaRefeicao) else {
-            return
+            return nil
         }
         
         let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: itensSelecionados)
         
+        return refeicao
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func adicionar(_ sender: Any) {
+        if let refeicao = dadosDoFurmulario() {
+            delegate?.adicionaRefeicao(refeicao)
+            navigationController?.popViewController(animated: true)
+        }else{
+            Alerta(controller: self).exibe(mensagem: "Erro ao preencher os campos")
+        }
         
-        print("comi \(refeicao.nome) fiquei com felicidade \(refeicao.felicidade)")
-        
-        delegate?.adicionaRefeicao(refeicao)
-        
-        navigationController?.popViewController(animated: true)
         
     }
     
-
+    
 }
 
