@@ -31,9 +31,9 @@ class Refeicao: NSObject, NSCoding {
     }
     
     required init?(coder: NSCoder) {
-        nome = coder.decodeObject(forKey: "nome") as! String
+        nome = coder.decodeObject(forKey: "nome") as? String ?? "indefinido"
         felicidade = coder.decodeInteger(forKey: "felicidade")
-        itens = coder.decodeObject(forKey: "itens") as! Array
+        itens = coder.decodeObject(forKey: "itens") as? Array ?? []
     }
     
     //MARK: - Metodos

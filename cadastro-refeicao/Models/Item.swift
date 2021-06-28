@@ -29,7 +29,7 @@ class Item: NSObject, NSCoding {
     }
     
     required init?(coder: NSCoder) {
-        nome = coder.decodeObject(forKey: "nome") as! String
+        nome = coder.decodeObject(forKey: "nome") as? String ?? "indefinido"
         calorias = coder.decodeDouble(forKey: "calorias")
     }
     

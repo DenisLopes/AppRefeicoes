@@ -12,7 +12,8 @@ class RefeicaoTableViewController: UITableViewController, AdicionaRefeicaoDelega
     var refeicoes: [Refeicao] = []
     
     override func viewDidLoad() {
-       refeicoes = RefeicaoDao().recupera()
+        super.viewDidLoad()
+        refeicoes = RefeicaoDao().recupera()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
